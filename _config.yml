@@ -113,6 +113,7 @@ gitalk:
   distractionFreeMode: true
   recentComment: true
   proxy: ''
+  comment: true
 
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html
@@ -129,6 +130,7 @@ valine:
   requiredFields: []
   admin: 'TriDiamond'
   recentComment: true
+  comment: true
 
 # Enable Busuanzi statistic plugin
 # see http://ibruce.info/2015/04/04/busuanzi/
