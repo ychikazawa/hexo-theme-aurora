@@ -7,6 +7,7 @@
           :title="pageData.title"
           :body="pageData.text"
           :uid="pageData.uid"
+          v-if="commentEnable"
         />
       </div>
     </PageContainer>
@@ -70,7 +71,16 @@ export default defineComponent({
     return {
       pageTitle: computed(() => pageTitle.value),
       pageData,
-      t
+      t,
+      commentEnable: computed(() => {
+        return (
+          (appStore.themeConfig.plugins.gitalk.enable &&
+            appStore.themeConfig.plugins.gitalk.comment) ||
+          (!appStore.themeConfig.plugins.gitalk.enable &&
+            appStore.themeConfig.plugins.valine.enable &&
+            appStore.themeConfig.plugins.valine.comment)
+        )
+      }),
     }
   }
 })

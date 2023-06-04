@@ -191,7 +191,7 @@
         </div>
         <template v-if="post.title && post.text && post.uid">
           <div id="comments">
-            <Comment :title="post.title" :body="post.text" :uid="post.uid" />
+            <Comment :title="post.title" :body="post.text" :uid="post.uid" v-if="commentEnable" />
           </div>
         </template>
       </div>
@@ -294,7 +294,16 @@ export default defineComponent({
       handleAuthorClick,
       loading,
       post,
-      t
+      t,
+      commentEnable: computed(() => {
+        return (
+          (appStore.themeConfig.plugins.gitalk.enable &&
+            appStore.themeConfig.plugins.gitalk.comment) ||
+          (!appStore.themeConfig.plugins.gitalk.enable &&
+            appStore.themeConfig.plugins.valine.enable &&
+            appStore.themeConfig.plugins.valine.comment)
+        )
+      }),
     }
   }
 })

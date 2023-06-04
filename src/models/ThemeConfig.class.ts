@@ -437,6 +437,7 @@ interface PluginsData {
     language: string
     distractionFreeMode: boolean
     recentComment: boolean
+    comment: boolean
     proxy: string
   }
 
@@ -451,6 +452,7 @@ interface PluginsData {
     meta: MetaAttributes[]
     admin: string
     recentComment: boolean
+    comment: boolean
   }
   recent_comments: boolean
   busuanzi: {
@@ -492,6 +494,7 @@ export class Plugins implements PluginsData {
     language: 'en',
     distractionFreeMode: false,
     recentComment: false,
+    comment: false,
     proxy: ''
   }
   valine = {
@@ -506,7 +509,8 @@ export class Plugins implements PluginsData {
     requiredFields: [],
     avatarForce: false,
     admin: '',
-    recentComment: false
+    recentComment: false,
+    comment: false
   }
   recent_comments = false
   busuanzi = {

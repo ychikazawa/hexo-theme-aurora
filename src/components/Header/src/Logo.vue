@@ -13,12 +13,12 @@
       "
       @click="handleLogoClick"
     >
-      <span class="flex text-4xl" v-if="themeConfig.site.author">
-        {{ themeConfig.site.author }}
+      <span class="flex text-4xl" v-if="themeConfig.site.subtitle">
+        {{ themeConfig.site.subtitle }}
       </span>
       <span v-else class="flex text-4xl animation-text">LOADING</span>
       <span class="font-extrabold text-xs uppercase">
-        {{ themeConfig.site.nick || 'BLOG' }}
+        {{ themeConfig.site.nick }}
       </span>
     </div>
     <img
